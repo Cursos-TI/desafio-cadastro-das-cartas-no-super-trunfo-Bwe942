@@ -5,8 +5,9 @@ int main (){
     //definindo as variaveis que iremos usar abaixo
     char estado, cidade[30], carta[30], estado2, cidade2[30], carta2[30];
     int populacao, pontost , num, populacao2, pontost2 , num2;
-    float pib, area, pib2, area2;
+    float pib, area, pib2, area2, dens1, dens2, capta1, capta2;
 
+    printf("*** Super Trunfo Cartas***\n");
     printf("Por favor insira os dados da sua carta 1:\n"); //printf para enviar ao usuarios informaçoes que ele deve inserir para armazenar
     printf("Digite uma letra de A até H para representar os oito estados: \n");
         scanf(" %c", &estado); //scanf armazenando dados dos usuarios nas variaveis
@@ -25,7 +26,7 @@ int main (){
     printf("Digite a área da cidade em quilometros quadrados: \n");
         scanf(" %f", &area);
     
-    printf("Digite o (PIB) da sua cidade: \n");
+    printf("Digite o (PIB) da sua cidade em bilhoes de Reais: \n");
         scanf(" %f", &pib);
     
     printf("Digite a quantidade de pontos turisticos da cidade: \n");
@@ -55,7 +56,11 @@ int main (){
     printf("Digite a quantidade de pontos turisticos da cidade: \n");
         scanf(" %d", &pontost2);
 
+
+        dens1 = (float) populacao / area; //calculo densidade populacional1
+        capta1 = (float) pib / populacao; // calculo pib per capta
         //retornar ao usuario a informação de suas cartas
+
     printf("Carta 1: \n");
     printf("Estado: %c\n", toupper(estado));
     printf("Código: %c%02d\n", toupper(estado), num);
@@ -64,7 +69,11 @@ int main (){
     printf("Área: %.2f km²\n", area);
     printf("PIB: %.2f bilhoes de reais\n", pib);
     printf("Número de pontos Turísticos: %d\n",pontost);
-    printf("\n");
+    printf("Densidade Populacional: %.2f hab/km²\n", dens1);
+    printf("PIB per Capita: %.2f reais\n", capta1);
+
+        dens2 = (float) populacao2 / area2 ; //calculo densidade populacional2
+        capta2 = (float) pib2 / populacao2; // calculo pib per capta
         printf("Carta 2: \n"); // carta 2
     printf("Estado: %c\n", toupper(estado2));
     printf("Código: %c%02d\n", toupper(estado2), num2);
@@ -73,6 +82,8 @@ int main (){
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f bilhoes de reais\n", pib2);
     printf("Número de pontos Turísticos: %d\n",pontost2);
-    
+    printf("Densidade Populacional: %.2f hab/km²\n", dens2);
+    printf("PIB per Capita: %.2f reais\n", capta2);
+
     return 0; 
 }
